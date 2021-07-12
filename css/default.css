@@ -1,0 +1,35 @@
+body {
+  padding: 5px;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "LiSu", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif, "Helvetica Neue",
+    Helvetica, sans-serif;
+  letter-spacing: 0.2em;
+} */
+
+div {
+  border-width: 1px;
+  border-color: darkslategray;
+  background-color: antiquewhite;
+  border-style: solid;
+  padding: 2px;
+  margin: 2px;
+}
+
+div:hover {
+  border-color: darkorchid;
+  background-color: azure;
+  border-left: 5px solid darkorchid;
+  min-height: 1in;
+}
+
+div.flexView {
+  display: flex;
+}

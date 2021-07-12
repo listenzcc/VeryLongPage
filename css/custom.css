@@ -1,0 +1,49 @@
+div#toc-1 {
+  position: fixed;
+  top: 0.5in;
+  right: 0.5in;
+  z-index: 10;
+}
+
+div#mainCanvas {
+  position: fixed;
+  top: 2in;
+  left: 2in;
+  width: 7in;
+  height: 5in;
+  z-index: 20;
+}
+
+div.section {
+  height: 1000px;
+  margin-left: 0.3in;
+}
+
+div.story {
+  position: relative;
+  top: 4in;
+  left: 3in;
+  width: 4in;
+  z-index: 30;
+}
+
+.text1 {
+  animation: animate1 3s 1;
+}
+
+@keyframes animate1 {
+  0% {
+    color: black;
+    margin-bottom: -40px;
+  }
+
+  30% {
+    letter-spacing: 25px;
+    margin-bottom: -40px;
+  }
+
+  85% {
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+  }
+}
