@@ -2,6 +2,24 @@
 // Author: Chuncheng
 // Purpose: Load Data and Place them
 
+d3.json("../backend/nodes.json").then((raw) => {
+  let n = raw.coord[0].length;
+
+  d3.select("#mainSvg")
+    .append("g")
+    .selectAll("circle")
+    .data(raw.coord[0])
+    .enter()
+    .append("circle")
+    .attr("cx", (d) => d[0] + "%")
+    .attr("cy", (d) => d[1] + "%")
+    .attr("r", 3)
+    .attr("stroke", "none")
+    .attr("fill", (d, i) => d3.interpolateBrBG(i / n));
+
+  gNodes = raw;
+});
+
 d3.json("../backend/simulation_data.json").then((raw) => {
   let data = [];
   for (let i in raw.title) {

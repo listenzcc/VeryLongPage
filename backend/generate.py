@@ -11,13 +11,12 @@ import random
 import pandas as pd
 
 from tqdm.auto import tqdm
-from datetime import datetime
 
 # %%
 root = os.path.dirname(__file__)
 
 # %%
-num_sections = 7
+num_sections = 20
 num_nodes = 400
 
 locations = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
@@ -28,14 +27,15 @@ dates = ['2020-{:02d}'.format(e) for e in range(1, 13)]
 
 
 def rnd_chr():
+    ''' Randomly Give a Char, 1/5 Chance to Give a Space '''
     if random.randint(0, 10) < 2:
         return ' '
     return chr(random.randint(97, 97+25))
 
 
 # %%
-df = pd.DataFrame(columns=['title', 'description',
-                  'gender', 'location', 'date'])
+sections = pd.DataFrame(columns=['title', 'description',
+                                 'gender', 'location', 'date'])
 
 for c in tqdm(range(num_sections)):
     d = dict(
@@ -45,11 +45,21 @@ for c in tqdm(range(num_sections)):
         location=random.choice(locations),
         date=random.choice(dates)
     )
-    df = df.append(d, ignore_index=True)
+    sections = sections.append(d, ignore_index=True)
 
-df.to_json(os.path.join(root, 'simulation_data.json'))
-df
+sections.to_json(os.path.join(root, 'simulation_data.json'))
+sections
 
 # %%
-random.randint(0, 100)
+
+nodes = pd.DataFrame(columns=['coord'])
+
+for c in tqdm(range(num_sections)):
+    d = [(random.randint(10, 90), random.randint(10, 90))
+         for _ in range(num_nodes)]
+    nodes = nodes.append(dict(coord=d), ignore_index=True)
+
+nodes.to_json(os.path.join(root, 'nodes.json'))
+nodes
+
 # %%

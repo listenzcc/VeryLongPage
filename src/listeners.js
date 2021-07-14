@@ -27,15 +27,27 @@ var scrollFunc = function (e) {
     gSectionIdx = i;
     console.log("Enter Section Idx of", i);
 
-    d3.select("#mainCanvas").selectAll("h3").data([]).exit().remove();
+    d3.select("#currentSection").selectAll("h3").data([]).exit().remove();
 
-    d3.select("#mainCanvas")
+    d3.select("#currentSection")
       .selectAll("h3")
       .data([gData[i][0]])
       .enter()
       .append("h3")
       .attr("class", "text1")
       .text((d) => d);
+
+    let n = gNodes.coord[i];
+
+    var t = d3.transition().duration(500).ease(d3.easeLinear);
+
+    d3.select("#mainSvg")
+      .select("g")
+      .selectAll("circle")
+      .data(gNodes.coord[i])
+      .transition(t)
+      .attr("cx", (d) => d[0] + "%")
+      .attr("cy", (d) => d[1] + "%");
   }
 };
 

@@ -5,13 +5,28 @@ div#toc-1 {
   z-index: 10;
 }
 
-div#mainCanvas {
+div#floatingContainer {
   position: fixed;
   top: 2in;
   left: 2in;
   width: 7in;
-  height: 5in;
+  height: 6in;
   z-index: 20;
+}
+
+div#currentSection {
+  height: 0.5in;
+}
+
+svg#mainSvg {
+  width: 6in;
+  height: 4.5in;
+  background-color: aliceblue;
+}
+
+circle.animateTransition {
+  transition: width 2s, height 2s, transform 2s;
+  -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
 }
 
 div.section {
@@ -28,7 +43,7 @@ div.story {
 }
 
 .text1 {
-  animation: animate1 3s 1;
+  animation: animate1 1s 1;
 }
 
 @keyframes animate1 {
