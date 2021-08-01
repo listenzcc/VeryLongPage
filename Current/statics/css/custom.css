@@ -1,0 +1,40 @@
+div#footer {
+  align-items: center;
+}
+
+div.sectionContainer {
+  height: 12in;
+  position: relative;
+}
+
+div.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.fixed {
+  position: fixed;
+}
+
+div.top {
+  z-index: 100;
+}
+
+div.middle {
+  z-index: 50;
+}
+
+div#mainSvgContainer {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+
+svg#mainSvg {
+  width: 6in;
+  height: 6in;
+  background-color: azure;
+}

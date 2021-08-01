@@ -1,0 +1,23 @@
+body {
+  padding: 5px;
+}
+
+div {
+  border-width: 1px;
+  border-color: darkslategray;
+  background-color: antiquewhite;
+  border-style: solid;
+  padding: 5px;
+  margin: 10px;
+}
+
+div:hover {
+  border-color: darkorchid;
+  background-color: azure;
+  border-left: 5px solid darkorchid;
+  min-height: 1in;
+}
+
+div.flexView {
+  display: flex;
+}
